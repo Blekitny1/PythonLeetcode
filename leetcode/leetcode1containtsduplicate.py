@@ -1,5 +1,3 @@
-# This is a sample Python script.
-
 def contains_duplicate(nums: list[int]):
     if len(nums) < 2:
         return False
@@ -12,18 +10,20 @@ def contains_duplicate(nums: list[int]):
                 previous_values.add(num)
         return False
 
+
 def contains_duplicate_yt(nums: list[int]):
     if len(set(nums)) == len(nums):
         return False
     else:
         return True
 
-# Press the green button in the gutter to run the script.
+
+
 if __name__ == '__main__':
     print(contains_duplicate([1, 2, 3, 4, 3]))
     print(contains_duplicate([1, 2, 3, 4, 6]))
     print(contains_duplicate([1, 2, 3, 4, 6, 6756, 23, 565, 232, 3]))
-    print(contains_duplicate_2([1,2,3,4,3]))
-    print(contains_duplicate_2([1,2,3,4,6]))
-    print(contains_duplicate_2([1,2,3,4,6,6756,23,565,232,3]))
+    print(contains_duplicate_yt([1,2,3,4,3]))
+    print(contains_duplicate_yt([1,2,3,4,6]))
+    print(contains_duplicate_yt([1,2,3,4,6,6756,23,565,232,3]))
 
