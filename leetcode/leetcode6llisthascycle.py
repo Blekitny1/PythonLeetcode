@@ -7,12 +7,15 @@ class ListNode:
         self.next = next
 
 class Solution:
-    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def hasCycle(self, head: Optional[ListNode]) -> bool:
         slow = fast = head
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
-        return slow
+            if fast == slow:
+                return True
+        return False
+
 
 if __name__ == '__main__':
     node1 = ListNode(2)
@@ -22,5 +25,15 @@ if __name__ == '__main__':
     node1.next = node2
     node2.next = node3
     node3.next = node4
-    print(Solution().middleNode(node1).val)
+
+    node11 = ListNode(1)
+    node12 = ListNode(2)
+    node13 = ListNode(3)
+    node14 = ListNode(4)
+    node11.next = node12
+    node12.next = node13
+    node13.next = node14
+    node14.next = node12
+    print(Solution().hasCycle(node1))
+    print(Solution().hasCycle(node11))
 
